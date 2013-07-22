@@ -1,0 +1,68 @@
+<h1>Listing budgets</h1>
+
+<table>
+  <tr>
+    <th>Cliente</th>
+    <th>Clientenome</th>
+    <th>Clienteendereco</th>
+    <th>Clientenumero</th>
+    <th>Clientebairro</th>
+    <th>Clientecidade</th>
+    <th>Clientecep</th>
+    <th>Clienteestado</th>
+    <th>Vendedor</th>
+    <th>Vendedornome</th>
+    <th>Formapagamento</th>
+    <th>Valorfrete</th>
+    <th>Valorseguro</th>
+    <th>Valoroutrasdespesas</th>
+    <th>Tipodesconto</th>
+    <th>Quantidadedesconto</th>
+    <th>Valortotaldesconto</th>
+    <th>Quantidadecomissao</th>
+    <th>Valortotalcomissao</th>
+    <th>Valortotalprodutos</th>
+    <th>Valortotalpedido</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @budgets.each do |budget| %>
+  <tr>
+    <td><%= budget.cliente_id %></td>
+    <td><%= budget.clientenome %></td>
+    <td><%= budget.clienteendereco %></td>
+    <td><%= budget.clientenumero %></td>
+    <td><%= budget.clientebairro %></td>
+    <td><%= budget.clientecidade %></td>
+    <td><%= budget.clientecep %></td>
+    <td><%= budget.clienteestado %></td>
+    <td><%= budget.vendedor_id %></td>
+    <td><%= budget.vendedornome %></td>
+    <td><%= budget.formapagamento_id %></td>
+    <td><%= budget.valorfrete %></td>
+    <td><%= budget.valorseguro %></td>
+    <td><%= budget.valoroutrasdespesas %></td>
+    <td><%= budget.tipodesconto %></td>
+    <td><%= budget.quantidadedesconto %></td>
+    <td><%= budget.valortotaldesconto %></td>
+    <td><%= budget.quantidadecomissao %></td>
+    <td><%= budget.valortotalcomissao %></td>
+    <td><%= budget.valortotalprodutos %></td>
+    <td><%= budget.valortotalpedido %></td>
+    <td><%= link_to 'Show', budget %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_budget_path(budget) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @budgets, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Budget', new_budget_path %>

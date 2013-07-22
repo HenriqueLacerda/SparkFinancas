@@ -1,0 +1,31 @@
+<h1>Listing customers</h1>
+<br />
+<%= link_to 'Novo Cliente', new_customer_path %>
+<br />
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Numero</th>
+    <th>Bairro</th>
+    <th>Cep</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= link_to customer.nome, customer %></td>
+    <td><%= customer.endereco %></td>
+    <td><%= customer.numero %></td>
+    <td><%= customer.bairro %></td>
+    <td><%= customer.cep %></td>
+    <td class="botaoAlterar"><%= link_to image_tag("alterar.png", :border => 0), edit_customer_path(customer) %></td>
+    <td class="botaoRemover"><%= link_to image_tag("remover.png", :border => 0), customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @customers, :update => 'div_principal' %>
+

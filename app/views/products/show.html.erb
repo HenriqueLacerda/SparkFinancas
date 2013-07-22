@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Referencia:</b>
+  <%= @product.referencia %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @product.nome %>
+</p>
+
+<p>
+  <b>Saldoatual:</b>
+  <%= @product.saldoatual %>
+</p>
+
+<p>
+  <b>Unidade:</b>
+  <%= @product.unidade %>
+</p>
+
+<p>
+  <b>Valorcompra:</b>
+  <%= @product.valorcompra %>
+</p>
+
+<p>
+  <b>Valorcompramedio:</b>
+  <%= @product.valorcompramedio %>
+</p>
+
+<p>
+  <b>Valorvenda:</b>
+  <%= @product.valorvenda %>
+</p>
+
+<p>
+  <b>Ncm:</b>
+  <%= @product.ncm_id %>
+</p>
+
+<p>
+  <b>Pesoliquido:</b>
+  <%= @product.pesoliquido %>
+</p>
+
+<p>
+  <b>Pesobruto:</b>
+  <%= @product.pesobruto %>
+</p>
+
+<p>
+  <b>Volumem3:</b>
+  <%= @product.volumem3 %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

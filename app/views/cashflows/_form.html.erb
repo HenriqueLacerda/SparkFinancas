@@ -1,0 +1,61 @@
+<%= form_for(@cashflow) do |f| %>
+  <% if @cashflow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cashflow.errors.count, "error") %> prohibited this cashflow from being saved:</h2>
+      <ul>
+      <% @cashflow.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="ui-label">
+    <%= f.label :category_id %><br />
+  </div>
+  <div class="ui-widget">
+    <input id="buscaCategoria" type="text"/>
+  	<%= hidden_field_tag :category_id %>  
+  </div>
+	
+  <div class="ui-label">
+    <%= f.label :account_id %><br />
+  </div>
+  <div class="ui-widget ui-autocomplete-input ui-corner-all">  
+     <input id="buscaConta" type="text"/>
+     <%= hidden_field_tag :account_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datalancamento %><br />
+    <%= f.text_field :datalancamento %>
+  </div>
+  <div class="field">
+    <%= f.label :receitadespesa %><br />
+    <%= f.text_field :receitadespesa %><br />
+	<%= f.select :receitadespesa, options_for_select([["Receita","R"],["Despesa","D"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br />
+</div>
+<div class="ui-autocomplete-input ui-corner-all">
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :datavencimento %><br />
+</div>
+<div class="ui-widget">
+    <%= f.text_field :datavencimento %>
+  </div>
+  <div class="field">
+    <%= f.label :databaixa %><br />
+    <%= f.text_field :databaixa %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br />
+    <%= f.text_field :observacao %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

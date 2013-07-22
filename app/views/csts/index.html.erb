@@ -1,0 +1,27 @@
+<h1>Códigos Csts</h1>
+<br />
+<%= link_to 'Novo Cst', new_cst_path %>
+<br />
+<br />
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Nome</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @csts.each do |cst| %>
+  <tr>
+    <td><%= cst.codigo %></td>
+    <td><%= link_to cst.nome, cst %></td>
+    <td class="botaoAlterar"><%= link_to image_tag("alterar.png", :border => 0), edit_cst_path(cst) %></td>
+    <td class="botaoRemover"><%= link_to image_tag("remover.png", :border => 0), cst, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @csts, :update => 'div_principal' %>
+
+

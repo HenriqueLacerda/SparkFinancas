@@ -1,0 +1,30 @@
+<h1>Listing ncms</h1>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Nome</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ncms.each do |ncm| %>
+  <tr>
+    <td><%= ncm.codigo %></td>
+    <td><%= ncm.nome %></td>
+    <td><%= link_to 'Show', ncm %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_ncm_path(ncm) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), ncm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @ncms, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Ncm', new_ncm_path %>

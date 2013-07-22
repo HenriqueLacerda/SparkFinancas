@@ -1,0 +1,61 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :referencia %><br />
+    <%= f.text_field :referencia %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :saldoatual %><br />
+    <%= f.text_field :saldoatual %>
+  </div>
+  <div class="field">
+    <%= f.label :unidade %><br />
+    <%= f.text_field :unidade %>
+  </div>
+  <div class="field">
+    <%= f.label :valorcompra %><br />
+    <%= f.text_field :valorcompra %>
+  </div>
+  <div class="field">
+    <%= f.label :valorcompramedio %><br />
+    <%= f.text_field :valorcompramedio %>
+  </div>
+  <div class="field">
+    <%= f.label :valorvenda %><br />
+    <%= f.text_field :valorvenda %>
+  </div>
+  <div class="field">
+    <%= f.label :ncm_id %><br />
+    <%= f.text_field :ncm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pesoliquido %><br />
+    <%= f.text_field :pesoliquido %>
+  </div>
+  <div class="field">
+    <%= f.label :pesobruto %><br />
+    <%= f.text_field :pesobruto %>
+  </div>
+  <div class="field">
+    <%= f.label :volumem3 %><br />
+    <%= f.text_field :volumem3 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

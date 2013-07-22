@@ -1,0 +1,25 @@
+<%= form_for(@csosn) do |f| %>
+  <% if @csosn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@csosn.errors.count, "error") %> prohibited this csosn from being saved:</h2>
+
+      <ul>
+      <% @csosn.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

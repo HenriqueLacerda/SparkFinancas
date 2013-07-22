@@ -1,0 +1,68 @@
+<h1>Listing sales</h1>
+
+<table>
+  <tr>
+    <th>Cliente</th>
+    <th>Clientenome</th>
+    <th>Clienteendereco</th>
+    <th>Clientenumero</th>
+    <th>Clientebairro</th>
+    <th>Clientecidade</th>
+    <th>Clientecep</th>
+    <th>Clienteestado</th>
+    <th>Vendedor</th>
+    <th>Vendedornome</th>
+    <th>Formapagamento</th>
+    <th>Valorfrete</th>
+    <th>Valorseguro</th>
+    <th>Valoroutrasdespesas</th>
+    <th>Tipodesconto</th>
+    <th>Quantidadedesconto</th>
+    <th>Valortotaldesconto</th>
+    <th>Quantidadecomissao</th>
+    <th>Valortotalcomissao</th>
+    <th>Valortotalprodutos</th>
+    <th>Valortotalpedido</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.cliente_id %></td>
+    <td><%= sale.clientenome %></td>
+    <td><%= sale.clienteendereco %></td>
+    <td><%= sale.clientenumero %></td>
+    <td><%= sale.clientebairro %></td>
+    <td><%= sale.clientecidade %></td>
+    <td><%= sale.clientecep %></td>
+    <td><%= sale.clienteestado %></td>
+    <td><%= sale.vendedor_id %></td>
+    <td><%= sale.vendedornome %></td>
+    <td><%= sale.formapagamento_id %></td>
+    <td><%= sale.valorfrete %></td>
+    <td><%= sale.valorseguro %></td>
+    <td><%= sale.valoroutrasdespesas %></td>
+    <td><%= sale.tipodesconto %></td>
+    <td><%= sale.quantidadedesconto %></td>
+    <td><%= sale.valortotaldesconto %></td>
+    <td><%= sale.quantidadecomissao %></td>
+    <td><%= sale.valortotalcomissao %></td>
+    <td><%= sale.valortotalprodutos %></td>
+    <td><%= sale.valortotalpedido %></td>
+    <td><%= link_to 'Show', sale %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_sale_path(sale) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @sales, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Sale', new_sale_path %>

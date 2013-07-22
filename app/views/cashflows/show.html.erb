@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @cashflow.company_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @cashflow.category_id %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @cashflow.account_id %>
+</p>
+
+<p>
+  <b>Datalancamento:</b>
+  <%= @cashflow.datalancamento %>
+</p>
+
+<p>
+  <b>Receitadespesa:</b>
+  <%= @cashflow.receitadespesa %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @cashflow.valor %>
+</p>
+
+<p>
+  <b>Datavencimento:</b>
+  <%= @cashflow.datavencimento %>
+</p>
+
+<p>
+  <b>Databaixa:</b>
+  <%= @cashflow.databaixa %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @cashflow.observacao %>
+</p>
+
+
+<%= link_to 'Edit', edit_cashflow_path(@cashflow) %> |
+<%= link_to 'Back', cashflows_path %>

@@ -1,0 +1,42 @@
+<h1>Listing sellers</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Numero</th>
+    <th>Bairro</th>
+    <th>Cidade</th>
+    <th>Cep</th>
+    <th>Estado</th>
+    <th>Observacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sellers.each do |seller| %>
+  <tr>
+    <td><%= seller.nome %></td>
+    <td><%= seller.endereco %></td>
+    <td><%= seller.numero %></td>
+    <td><%= seller.bairro %></td>
+    <td><%= seller.cidade %></td>
+    <td><%= seller.cep %></td>
+    <td><%= seller.estado %></td>
+    <td><%= seller.observacao %></td>
+    <td><%= link_to 'Show', seller %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_seller_path(seller) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), seller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @sellers, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Seller', new_seller_path %>

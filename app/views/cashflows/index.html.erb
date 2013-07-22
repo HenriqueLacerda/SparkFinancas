@@ -1,0 +1,42 @@
+<h1>Fluxo de Caixa</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Account</th>
+    <th>Datalancamento</th>
+    <th>Receitadespesa</th>
+    <th>Valor</th>
+    <th>Datavencimento</th>
+    <th>Databaixa</th>
+    <th>Observacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cashflows.each do |cashflow| %>
+  <tr>
+    <td><%= cashflow.category_id %></td>
+    <td><%= cashflow.account_id %></td>
+    <td><%= cashflow.datalancamento %></td>
+    <td><%= cashflow.receitadespesa %></td>
+    <td><%= cashflow.valor %></td>
+    <td><%= cashflow.datavencimento %></td>
+    <td><%= cashflow.databaixa %></td>
+    <td><%= cashflow.observacao %></td>
+    <td><%= link_to 'Show', cashflow %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_cashflow_path(cashflow) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), cashflow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @cashflows, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Cashflow', new_cashflow_path %>

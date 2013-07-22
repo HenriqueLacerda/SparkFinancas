@@ -1,0 +1,46 @@
+Dashboard<br />
+
+<div id="contasPagar">
+	Contas a Pagar
+	<table>
+	  <tr>
+	    <th>Categoria</th>
+	    <th>Conta</th>
+	    <th>Vencimento</th>
+	    <th>Valor</th>
+	  </tr>
+
+	<% @cashflowsPagar.each do |cashflow| %>
+	  <tr>
+	    <td><%= cashflow.category_id %></td>
+	    <td><%= cashflow.account_id %></td>
+	    <td><%= cashflow.datavencimento %></td>
+		<td><%= cashflow.valor %></td>
+	  </tr>
+	<% end %>
+	</table>
+	Valor total: <%= @cashflowsPagar.sum(:valor) %>
+</div>
+<div id="contasReceber">
+	Contas a Receber
+	<table>
+	  <tr>
+	    <th>Category</th>
+	    <th>Account</th>
+	    <th>Vencimento</th>
+	    <th>Valor</th>
+	  </tr>
+
+	<% @cashflowsReceber.each do |cashflow| %>
+	  <tr>
+	    <td><%= cashflow.category_id %></td>
+	    <td><%= cashflow.account_id %></td>
+	    <td><%= cashflow.datavencimento %></td>
+		<td><%= cashflow.valor %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+<br />
+
+

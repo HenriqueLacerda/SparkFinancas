@@ -1,0 +1,28 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.nome %></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_category_path(category) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @categories, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Category', new_category_path %>

@@ -1,0 +1,48 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Referencia</th>
+    <th>Nome</th>
+    <th>Saldoatual</th>
+    <th>Unidade</th>
+    <th>Valorcompra</th>
+    <th>Valorcompramedio</th>
+    <th>Valorvenda</th>
+    <th>Ncm</th>
+    <th>Pesoliquido</th>
+    <th>Pesobruto</th>
+    <th>Volumem3</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.referencia %></td>
+    <td><%= product.nome %></td>
+    <td><%= product.saldoatual %></td>
+    <td><%= product.unidade %></td>
+    <td><%= product.valorcompra %></td>
+    <td><%= product.valorcompramedio %></td>
+    <td><%= product.valorvenda %></td>
+    <td><%= product.ncm_id %></td>
+    <td><%= product.pesoliquido %></td>
+    <td><%= product.pesobruto %></td>
+    <td><%= product.volumem3 %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to image_tag("alterar.png", :border => 0), edit_product_path(product) %></td>
+    <td><%= link_to image_tag("remover.png", :border => 0), product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @products, :update => 'div_principal' %>
+<br />
+<div id="div_principal">	
+	principal
+</div>
+
+<%= link_to 'New Product', new_product_path %>

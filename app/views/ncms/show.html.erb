@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @ncm.codigo %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ncm.nome %>
+</p>
+
+
+<%= link_to 'Edit', edit_ncm_path(@ncm) %> |
+<%= link_to 'Back', ncms_path %>

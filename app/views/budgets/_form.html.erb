@@ -1,0 +1,101 @@
+<%= form_for(@budget) do |f| %>
+  <% if @budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% @budget.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cliente_id %><br />
+    <%= f.text_field :cliente_id %>
+  </div>
+  <div class="field">
+    <%= f.label :clientenome %><br />
+    <%= f.text_field :clientenome %>
+  </div>
+  <div class="field">
+    <%= f.label :clienteendereco %><br />
+    <%= f.text_field :clienteendereco %>
+  </div>
+  <div class="field">
+    <%= f.label :clientenumero %><br />
+    <%= f.text_field :clientenumero %>
+  </div>
+  <div class="field">
+    <%= f.label :clientebairro %><br />
+    <%= f.text_field :clientebairro %>
+  </div>
+  <div class="field">
+    <%= f.label :clientecidade %><br />
+    <%= f.text_field :clientecidade %>
+  </div>
+  <div class="field">
+    <%= f.label :clientecep %><br />
+    <%= f.text_field :clientecep %>
+  </div>
+  <div class="field">
+    <%= f.label :clienteestado %><br />
+    <%= f.text_field :clienteestado %>
+  </div>
+  <div class="field">
+    <%= f.label :vendedor_id %><br />
+    <%= f.text_field :vendedor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :vendedornome %><br />
+    <%= f.text_field :vendedornome %>
+  </div>
+  <div class="field">
+    <%= f.label :formapagamento_id %><br />
+    <%= f.number_field :formapagamento_id %>
+  </div>
+  <div class="field">
+    <%= f.label :valorfrete %><br />
+    <%= f.text_field :valorfrete %>
+  </div>
+  <div class="field">
+    <%= f.label :valorseguro %><br />
+    <%= f.text_field :valorseguro %>
+  </div>
+  <div class="field">
+    <%= f.label :valoroutrasdespesas %><br />
+    <%= f.text_field :valoroutrasdespesas %>
+  </div>
+  <div class="field">
+    <%= f.label :tipodesconto %><br />
+    <%= f.number_field :tipodesconto %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidadedesconto %><br />
+    <%= f.text_field :quantidadedesconto %>
+  </div>
+  <div class="field">
+    <%= f.label :valortotaldesconto %><br />
+    <%= f.text_field :valortotaldesconto %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidadecomissao %><br />
+    <%= f.text_field :quantidadecomissao %>
+  </div>
+  <div class="field">
+    <%= f.label :valortotalcomissao %><br />
+    <%= f.text_field :valortotalcomissao %>
+  </div>
+  <div class="field">
+    <%= f.label :valortotalprodutos %><br />
+    <%= f.text_field :valortotalprodutos %>
+  </div>
+  <div class="field">
+    <%= f.label :valortotalpedido %><br />
+    <%= f.text_field :valortotalpedido %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

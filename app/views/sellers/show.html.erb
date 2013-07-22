@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @seller.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @seller.endereco %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @seller.numero %>
+</p>
+
+<p>
+  <b>Bairro:</b>
+  <%= @seller.bairro %>
+</p>
+
+<p>
+  <b>Cidade:</b>
+  <%= @seller.cidade %>
+</p>
+
+<p>
+  <b>Cep:</b>
+  <%= @seller.cep %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @seller.estado %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @seller.observacao %>
+</p>
+
+
+<%= link_to 'Edit', edit_seller_path(@seller) %> |
+<%= link_to 'Back', sellers_path %>

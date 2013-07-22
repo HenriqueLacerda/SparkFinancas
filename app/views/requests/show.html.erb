@@ -1,0 +1,110 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @request.cliente_id %>
+</p>
+
+<p>
+  <b>Clientenome:</b>
+  <%= @request.clientenome %>
+</p>
+
+<p>
+  <b>Clienteendereco:</b>
+  <%= @request.clienteendereco %>
+</p>
+
+<p>
+  <b>Clientenumero:</b>
+  <%= @request.clientenumero %>
+</p>
+
+<p>
+  <b>Clientebairro:</b>
+  <%= @request.clientebairro %>
+</p>
+
+<p>
+  <b>Clientecidade:</b>
+  <%= @request.clientecidade %>
+</p>
+
+<p>
+  <b>Clientecep:</b>
+  <%= @request.clientecep %>
+</p>
+
+<p>
+  <b>Clienteestado:</b>
+  <%= @request.clienteestado %>
+</p>
+
+<p>
+  <b>Vendedor:</b>
+  <%= @request.vendedor_id %>
+</p>
+
+<p>
+  <b>Vendedornome:</b>
+  <%= @request.vendedornome %>
+</p>
+
+<p>
+  <b>Formapagamento:</b>
+  <%= @request.formapagamento_id %>
+</p>
+
+<p>
+  <b>Valorfrete:</b>
+  <%= @request.valorfrete %>
+</p>
+
+<p>
+  <b>Valorseguro:</b>
+  <%= @request.valorseguro %>
+</p>
+
+<p>
+  <b>Valoroutrasdespesas:</b>
+  <%= @request.valoroutrasdespesas %>
+</p>
+
+<p>
+  <b>Tipodesconto:</b>
+  <%= @request.tipodesconto %>
+</p>
+
+<p>
+  <b>Quantidadedesconto:</b>
+  <%= @request.quantidadedesconto %>
+</p>
+
+<p>
+  <b>Valortotaldesconto:</b>
+  <%= @request.valortotaldesconto %>
+</p>
+
+<p>
+  <b>Quantidadecomissao:</b>
+  <%= @request.quantidadecomissao %>
+</p>
+
+<p>
+  <b>Valortotalcomissao:</b>
+  <%= @request.valortotalcomissao %>
+</p>
+
+<p>
+  <b>Valortotalprodutos:</b>
+  <%= @request.valortotalprodutos %>
+</p>
+
+<p>
+  <b>Valortotalpedido:</b>
+  <%= @request.valortotalpedido %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
